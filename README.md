@@ -8,3 +8,11 @@ This is a Node.js application that utilizes a discord webhook to post a question
 2. Run `npm install` to install dependencies.
 3. Copy `.env.example` to `.env` and fill in the values.
 4. Run `node index.js`.
+
+## License
+
+BSD 3-Clause License. See `LICENSE` for more information.
+
+## Donations
+
+If you would like to donate to support this project, you can do so via Liberapay - see my GitHub profile for the link.
