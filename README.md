@@ -1,6 +1,6 @@
 # Discord Question of the Day Bot
 
-This is a Node.js application that utilizes a discord webhook to post a question of the day from a file to a Discord channel. It reads a JSON object containing an array of questions and posts one question every 24 hours.
+This is a Node.js application that utilizes a discord webhook to post a question of the day from a file to a Discord channel. It reads a JSON object containing an array of questions and posts one question according to your schedule.
 
 ## Usage
 

@@ -1,6 +1,9 @@
 // Load the fs module to read and write files
 import fs from 'fs';
 
+// Load the node-schedule module to schedule jobs
+import schedule from 'node-schedule'
+
 // Load the dotenv module to access environment variables
 import dotenv from 'dotenv';
 dotenv.config();
@@ -125,6 +128,9 @@ async function main() {
   }
 }
 
-// Run the main function once and then set an interval to run it every 24 hours (86400000 milliseconds)
-main();
-setInterval(main, 86400000);
+console.log("Bot started! The question will be posted according to the schedule.");
+console.log(`Your current schedule: ${process.env.CRON_SCHEDULE}`);
+// Set an interval to run the main function according to the schedule
+schedule.scheduleJob(process.env.CRON_SCHEDULE, () => {
+  main();
+})
