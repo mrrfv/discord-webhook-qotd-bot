@@ -46,7 +46,7 @@ async function postQuestion(question, progress, questionsLength) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({embeds: [embed]})
+      body: JSON.stringify({ content: process.env.OPTIONAL_MESSAGE_CONTENT, embeds: [embed]})
     });
 
     // Check if the response status is ok
