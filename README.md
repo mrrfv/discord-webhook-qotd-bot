@@ -22,6 +22,8 @@ cat 0 > "$(pwd)"/progress.txt
 docker run -d \ 
     -e WEBHOOK_URL="enter webhook url here" \ 
     -e CRON_SCHEDULE="enter cron schedule here" \ 
+    -e OPTIONAL_MESSAGE_CONTENT="" \ 
+    -e TZ="Europe/Berlin" \ 
     --mount type=bind,source="$(pwd)"/questions.json,target=/app/questions.json,readonly \ 
     --mount type=bind,source="$(pwd)"/progress.txt,target=/app/progress.txt \ 
     --restart always \ 
@@ -29,7 +31,7 @@ docker run -d \
     mrrfv/discord-webhook-qotd-bot:latest
 ```
 
-The command above expects that the progress.txt and questions.json files already exist, and that they are in the current directory.
+The command above expects that the progress.txt and questions.json files already exist, and that they are in the current directory. Change the value of the `TZ` environment variable for message scheduling to work properly.
 
 ## License
 
