@@ -11,6 +11,21 @@ dotenv.config();
 // Load the node-fetch module to make HTTP requests
 import fetch from 'node-fetch';
 
+// Check if the required environment variables are present
+const required_env_vars = [
+  "WEBHOOK_URL",
+  "CRON_SCHEDULE"
+]
+
+for (const env_var of required_env_vars) {
+  if (!process.env[env_var]) {
+    console.error(`Missing environment variable: ${env_var} - the bot cannot continue.`);
+    console.error(`Required environment variables: ${required_env_vars.join(', ')}`);
+    console.error(`Refer to the documentation for more information.`)
+    process.exit(1);
+  }
+}
+
 // Define a function that posts a question of the day using a discord webhook
 async function postQuestion(question, progress, questionsLength) {
   // Create an embed object with some styling and the question as the description
