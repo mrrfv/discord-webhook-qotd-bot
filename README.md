@@ -36,7 +36,3 @@ The command above expects that the progress.txt and questions.json files already
 ## License
 
 BSD 3-Clause License. See `LICENSE` for more information.
-
-## Donations
-
-If you would like to donate to support this project, you can do so via Liberapay - see my GitHub profile for the link.
